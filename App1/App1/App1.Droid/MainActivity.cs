@@ -6,6 +6,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Support.V4.Widget;
 
 namespace App1.Droid
 {
@@ -14,7 +15,6 @@ namespace App1.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-             
             base.OnCreate(bundle);
 
             global::Xamarin.Forms.Forms.Init(this, bundle);
