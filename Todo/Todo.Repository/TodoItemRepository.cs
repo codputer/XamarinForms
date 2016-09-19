@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Todo.Repository;
 using Xamarin.Forms;
 
-namespace Todo
+namespace Todo.Repository
 {
     public class TodoItemDatabase  : BaseRepository
 	{
@@ -17,7 +15,7 @@ namespace Todo
 		/// </param>
 		public TodoItemDatabase()
 		{
-			database = DependencyService.Get<ISQLite> ().GetConnection ();
+			database = DependencyService.Get<ISQLite>().GetConnection ();
 			// create the tables
 			database.CreateTable<TodoItem>();
 		}

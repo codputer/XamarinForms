@@ -3,6 +3,8 @@ using Todo;
 using Xamarin.Forms;
 using Todo.Droid;
 using System.IO;
+using SQLite;
+using Todo.Repository;
 
 [assembly: Dependency (typeof (SQLite_Android))]
 
@@ -15,7 +17,7 @@ namespace Todo.Droid
 		}
 
 		#region ISQLite implementation
-		public SQLite.SQLiteConnection GetConnection ()
+		public SQLiteConnection GetConnection ()
 		{
 			var sqliteFilename = "TodoSQLite.db3";
 			string documentsPath = System.Environment.GetFolderPath (System.Environment.SpecialFolder.Personal); // Documents folder

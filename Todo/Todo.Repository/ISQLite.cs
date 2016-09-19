@@ -1,7 +1,6 @@
-﻿using System;
-using SQLite;
+﻿using SQLite;
 
-namespace Todo
+namespace Todo.Repository
 {
 	public interface ISQLite
 	{

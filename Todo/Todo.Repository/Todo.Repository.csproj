@@ -36,7 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
+    <Compile Include="ISQLite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TodoItem.cs" />
+    <Compile Include="TodoItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SQLite-net, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
