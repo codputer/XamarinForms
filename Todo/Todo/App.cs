@@ -7,7 +7,7 @@ namespace Todo
 {
 	public class App : Application
 	{
-		static TodoItemDatabase database;
+		static TodoItemRepository _repository;
 
 		public App ()
 		{
@@ -22,12 +22,12 @@ namespace Todo
 			MainPage = nav;
 		}
 
-		public static TodoItemDatabase Database {
+		public static TodoItemRepository Repository {
 			get { 
-				if (database == null) {
-					database = new TodoItemDatabase ();
+				if (_repository == null) {
+					_repository = new TodoItemRepository ();
 				}
-				return database; 
+				return _repository; 
 			}
 		}
 
@@ -49,7 +49,7 @@ namespace Todo
 
 					if (ResumeAtTodoId >= 0) {
 						var todoPage = new TodoItemPageX ();
-						todoPage.BindingContext = Database.GetItem (ResumeAtTodoId);
+						todoPage.BindingContext = Repository.GetItem (ResumeAtTodoId);
 
 						MainPage.Navigation.PushAsync (todoPage, false); // no animation
 					}

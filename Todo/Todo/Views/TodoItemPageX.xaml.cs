@@ -16,14 +16,14 @@ namespace Todo
         void saveClicked(object sender, EventArgs e)
         {
             var todoItem = (TodoItem)BindingContext;
-            App.Database.SaveItem(todoItem);
+            App.Repository.SaveItem(todoItem);
             this.Navigation.PopAsync();
         }
 
         void deleteClicked(object sender, EventArgs e)
         {
             var todoItem = (TodoItem)BindingContext;
-            App.Database.DeleteItem(todoItem.ID);
+            App.Repository.DeleteItem(todoItem.ID);
             this.Navigation.PopAsync();
         }
 

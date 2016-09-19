@@ -1,8 +1,9 @@
-﻿using Android.Speech.Tts;
-using Xamarin.Forms;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.Diagnostics;
+using Android.Speech.Tts;
 using Java.Lang;
 using Todo;
+using Xamarin.Forms;
 
 [assembly: Dependency (typeof (TextToSpeech_Android))]
 
@@ -12,11 +13,8 @@ namespace Todo
 	{
 		TextToSpeech speaker;
 		string toSpeak;
-		public TextToSpeech_Android ()
-		{
-		}
 
-		public void Speak (string text)
+	    public void Speak (string text)
 		{
 			var c = Forms.Context; 
 			toSpeak = text;
@@ -33,12 +31,12 @@ namespace Todo
 		public void OnInit (OperationResult status)
 		{
 			if (status.Equals (OperationResult.Success)) {
-				System.Diagnostics.Debug.WriteLine ("spoke");
+				Debug.WriteLine ("spoke");
 				var p = new Dictionary<string,string> ();
 				speaker.Speak (toSpeak, QueueMode.Flush, p);
 			}
 			else
-				System.Diagnostics.Debug.WriteLine ("was quiet");
+				Debug.WriteLine ("was quiet");
 		}
 		#endregion
 	}

@@ -54,7 +54,7 @@ namespace Todo
             {
                 var tbi2 = new ToolbarItem("?", null, () =>
                 {
-                    var todos = App.Database.GetItemsNotDone();
+                    var todos = App.Repository.GetItemsNotDone();
                     var tospeak = "";
                     foreach (var t in todos)
                         tospeak += t.Name + " ";
@@ -72,7 +72,7 @@ namespace Todo
             base.OnAppearing();
             // reset the 'resume' id, since we just want to re-start here
             ((App)App.Current).ResumeAtTodoId = -1;
-            listView.ItemsSource = App.Database.GetItems();
+            listView.ItemsSource = App.Repository.GetItems();
         }
 
         void listItemSelected(object sender, SelectedItemChangedEventArgs e)

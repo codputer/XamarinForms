@@ -4,7 +4,7 @@ using Xamarin.Forms;
 
 namespace Todo.Repository
 {
-    public class TodoItemDatabase  : BaseRepository
+    public class TodoItemRepository  : BaseRepository
 	{
 	    /// <summary>
 		/// Initializes a new instance of the <see cref="Tasky.DL.TaskDatabase"/> TaskDatabase. 
@@ -13,7 +13,7 @@ namespace Todo.Repository
 		/// <param name='path'>
 		/// Path.
 		/// </param>
-		public TodoItemDatabase()
+		public TodoItemRepository()
 		{
 			database = DependencyService.Get<ISQLite>().GetConnection ();
 			// create the tables
