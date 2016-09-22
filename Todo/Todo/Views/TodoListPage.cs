@@ -1,5 +1,7 @@
-﻿using Xamarin.Forms;
+﻿using System.Collections.Generic;
+using Xamarin.Forms;
 using System.Diagnostics;
+using System.Linq;
 using Todo.Repository;
 
 namespace Todo
@@ -10,8 +12,16 @@ namespace Todo
         public TodoListPage()
         {
             Title = "Todo";
+            var searchBar = new SearchBar()
+            {
+                Placeholder = "Type here to search", HeightRequest = 50
+            };
+            searchBar.HorizontalOptions = LayoutOptions.StartAndExpand;
+            searchBar.TextChanged += SearchBar_TextChanged;
+
 
             listView = new ListView();
+            listView.RowHeight = 50;
             listView.ItemTemplate = new DataTemplate
                     (typeof(TodoItemCell));
             listView.ItemSelected += (sender, e) =>
@@ -35,6 +45,7 @@ namespace Todo
                     FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label))
                 });
             }
+            layout.Children.Add(searchBar);
             layout.Children.Add(listView);
             layout.VerticalOptions = LayoutOptions.FillAndExpand;
             Content = layout;
@@ -89,6 +100,18 @@ namespace Todo
                 ToolbarItems.Add(tbi2);
             }
             #endregion
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var keyword = e.NewTextValue;
+            List<TodoItem> listViewItemsSource = App.Repository.GetItems().ToList();
+            if (keyword.Length>0)
+            {
+                listViewItemsSource = listViewItemsSource.Where(x => x.Name.Contains(keyword) || x.Notes.Contains(keyword)).ToList();
+            }
+            listView.ItemsSource = null;
+            listView.ItemsSource = listViewItemsSource;
         }
 
         protected override void OnAppearing()
