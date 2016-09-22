@@ -3,8 +3,8 @@
 namespace Todo.Repository
 {
 	public interface ISQLite
-	{
-		SQLiteConnection GetConnection();
+	{	
+	    SQLiteConnection Connection { get; }
 	}
 }
 
