@@ -30,7 +30,7 @@ namespace Todo
                 var todoPage = new TodoItemPage();
                 todoPage.BindingContext = todoItem;
 
-                ((App)App.Current).ResumeAtTodoId = todoItem.ID;
+                ((App)Application.Current).ResumeAtTodoId = todoItem.ID;
                 Debug.WriteLine("setting ResumeAtTodoId = " + todoItem.ID);
 
                 Navigation.PushAsync(todoPage);
