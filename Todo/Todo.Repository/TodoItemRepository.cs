@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Model;
 using Xamarin.Forms;
 
 namespace Todo.Repository
@@ -32,7 +33,8 @@ namespace Todo.Repository
         {
             lock (locker)
             {
-                return database.Table<TodoItem>().Where(x => x.Done == false).AsEnumerable();
+                var tableQuery = database.Table<TodoItem>();
+                return tableQuery.Where(x => x.Done == false).AsEnumerable();
             }
         }
 

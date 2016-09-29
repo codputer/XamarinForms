@@ -38,7 +38,6 @@
     <Compile Include="BaseRepository.cs" />
     <Compile Include="ISQLite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TodoItem.cs" />
     <Compile Include="TodoItemRepository.cs" />
   </ItemGroup>
   <ItemGroup>
