@@ -34,12 +34,6 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="App.cs" />
-    <Compile Include="Views\TodoItemListX.xaml.cs">
-      <DependentUpon>TodoItemListX.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TodoItemPageX.xaml.cs">
-      <DependentUpon>TodoItemPageX.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Views\TodoListPage.cs" />
     <Compile Include="Views\TodoItemPage.cs" />
     <Compile Include="Views\TodoItemCell.cs" />
@@ -67,12 +61,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\TodoItemPageX.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
     <None Include="Toolkit.Content\ApplicationBar.Add.png" />
     <None Include="Toolkit.Content\ApplicationBar.Cancel.png" />
@@ -80,12 +68,6 @@
     <None Include="Toolkit.Content\ApplicationBar.Delete.png" />
     <None Include="Toolkit.Content\ApplicationBar.Select.png" />
     <None Include="README_FIRST.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Views\TodoItemListX.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Todo.Repository\Todo.Repository.csproj">

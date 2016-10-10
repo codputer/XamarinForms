@@ -15,7 +15,7 @@ namespace Todo
 			Resources.Add ("primaryGreen", Color.FromHex("91CA47"));
 			Resources.Add ("primaryDarkGreen", Color.FromHex ("6FA22E"));
 
-			var nav = new NavigationPage (new TodoItemListX ());
+			var nav = new NavigationPage (new TodoListPage());
 			nav.BarBackgroundColor = (Color)App.Current.Resources["primaryGreen"];
 			nav.BarTextColor = Color.White;
 
@@ -48,7 +48,7 @@ namespace Todo
 					ResumeAtTodoId = int.Parse (rati);
 
 					if (ResumeAtTodoId >= 0) {
-						var todoPage = new TodoItemPageX ();
+						var todoPage = new TodoItemPage();
 						todoPage.BindingContext = Repository.GetItem (ResumeAtTodoId);
 
 						MainPage.Navigation.PushAsync (todoPage, false); // no animation
@@ -75,7 +75,7 @@ namespace Todo
 //
 //					if (ResumeAtTodoId >= 0) {
 //						var todoPage = new TodoItemPage ();
-//						todoPage.BindingContext = Database.GetItem (ResumeAtTodoId);
+//						todoPage.BindingContext = Repository.GetItem (ResumeAtTodoId);
 //
 //						MainPage.Navigation.PushAsync (
 //							todoPage,
