@@ -91,28 +91,29 @@ namespace App2
                     DisplayAlert(title, msg, btn);
                     return;
                 }
+                
+                //SigninService service = new SigninService();
+                //try
+                //{
+                //    loginButton.IsEnabled = false;
+                //    loginButton.Text = "Processing";
+                //    LoggedInUser userInfo = service.Signin(emailEntry.Text, passwordEntry.Text);
+                //    if (App.Current.Properties.ContainsKey("UserInfo"))
+                //    {
+                //        App.Current.Properties.Remove("UserInfo");
+                //    }
 
-                SigninService service = new SigninService();
-                try
-                {
-                    loginButton.IsEnabled = false;
-                    loginButton.Text = "Processing";
-                    LoggedInUser userInfo = service.Signin(emailEntry.Text, passwordEntry.Text);
-                    if (App.Current.Properties.ContainsKey("UserInfo"))
-                    {
-                        App.Current.Properties.Remove("UserInfo");
-                    }
-
-                    ApplicationDataFactory.UserData = userInfo;
-                    App.Current.Properties.Add("UserInfo", userInfo);
-                    App.Current.MainPage = new BrandListPage();
-                }
-                catch (Exception exception)
-                {
-                    loginButton.IsEnabled = true;
-                    loginButton.Text = "Login";
-                    DisplayAlert("Error occurred", "\n Details: " + exception.Message, "Ok");
-                }
+                //    ApplicationDataFactory.UserData = userInfo;
+                //    App.Current.Properties.Add("UserInfo", userInfo);
+                //    App.Current.MainPage = new MainPage();
+                //   // App.NavigateTo(new HomePage());
+                //}
+                //catch (Exception exception)
+                //{
+                //    loginButton.IsEnabled = true;
+                //    loginButton.Text = "Login";
+                //    DisplayAlert("Error occurred", "\n Details: " + exception.Message, "Ok");
+                //}             
             }
             catch (Exception exception)
             {

@@ -1,6 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Net.Http;
-using Newtonsoft.Json;
 
 namespace App2
 {
@@ -8,6 +6,7 @@ namespace App2
     {
         public LoggedInUser Signin(string email,string password)
         {
+            //HttpWrapperBase wrapper=new HttpWrapperBase();
             HttpClient client = new HttpClient();
              string defaultEmail = "admin@demo1.com";
              string defaultPassword = "Pass@123";

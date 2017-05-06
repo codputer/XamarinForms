@@ -13,7 +13,7 @@ namespace App2
         {
             InitializeComponent();
 
-            MainPage = new SigninPage();
+            MainPage = new BrandListPage();
         }
 
         protected override void OnStart()
