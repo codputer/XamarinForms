@@ -74,7 +74,7 @@ namespace App2
         {
             if (string.IsNullOrWhiteSpace(emailEntry.Text) || string.IsNullOrWhiteSpace(passwordEntry.Text))
             {
-                DisplayAlert("Error occurred", "empty fields", "Cancel");
+                DisplayAlert("Error occurred", "error", "Cancel");
                 return;
             }
 

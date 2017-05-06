@@ -4,8 +4,9 @@ namespace App2
 {
     public abstract class Entity
     {
+        [Key]
         public string Id { get; set; }
-     
+        [Required]
         public DateTime Created { get; set; }
         [Required]
         public string CreatedBy { get; set; }
