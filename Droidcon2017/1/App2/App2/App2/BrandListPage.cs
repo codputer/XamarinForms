@@ -105,26 +105,6 @@ namespace App2
         protected override void OnAppearing()
         {
             list = new List<Brand>();
-            list.Add(new Brand()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = "Microsoft"
-            });
-            list.Add(new Brand()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = "Code Coopers"
-            });
-            list.Add(new Brand()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = "Google"
-            });
-            list.Add(new Brand()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = "DreamOgrammerS"
-            });
             Tuple<List<Brand>, int> result = SearchAsync();
             list = result.Item1;
             _listView.ItemsSource = list;
